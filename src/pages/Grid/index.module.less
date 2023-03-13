@@ -1,0 +1,34 @@
+.wrapper li {
+  display: inline-block;
+  border: 1px solid rgb(212, 208, 208);
+  padding: 10px;
+  margin-right: 10px;
+}
+.grid {
+  display: grid;
+  width: 500px;
+  background-color: aqua;
+  // grid-template-columns: repeat(3, 80px); // 3列，每列50px
+  // grid-template-columns: repeat(auto-fill, 50px); // 每列50px，布满
+  grid-template-columns: repeat(3, 1fr); // 平均分成3列
+  // grid-template-columns: 1fr 2fr 3fr;
+  // grid-template-columns: 1fr minmax(150px, 1fr); //最小150px
+  grid-template-rows: repeat(3, 50px);
+  gap: 10px;
+  // grid-template-areas:
+  //   "a b c"
+  //   "d e f"
+  //   "g h i";
+  grid-template-areas:
+    "a a a"
+    "b b b"
+    "c c c";
+  & div {
+    &:nth-child(n) {
+      background-color: bisque;
+    }
+    &:nth-child(2n) {
+      background-color: blueviolet;
+    }
+  }
+}

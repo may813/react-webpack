@@ -1,0 +1,81 @@
+.wrapper li {
+  display: inline-block;
+  border: 1px solid rgb(212, 208, 208);
+  padding: 10px;
+  margin-right: 10px;
+}
+.flex {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  margin-right: 10px;
+  & div {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background-color: bisque;
+  }
+}
+.flexDirectionColumn {
+  flex-direction: column;
+}
+.alignItemsStretch {
+  align-items: stretch;
+  & div {
+    height: auto;
+  }
+}
+.alignCentent {
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: 300px;
+}
+.alignCententStretch {
+  flex-wrap: wrap;
+  align-content: stretch;
+  height: 300px;
+  & div {
+    height: auto;
+  }
+}
+.itemFlexGrow {
+  & div {
+    width: 30px;
+    margin: 0;
+  }
+  & div:nth-child(2) {
+    flex-grow: 1;
+    background-color: azure;
+  }
+}
+.itemFlexShrink {
+  & div {
+    width: 80px;
+    margin: 0;
+  }
+  & div:first-child {
+    flex-shrink: 2;
+  }
+  & div:nth-child(2) {
+    flex-shrink: 0;
+    background-color: azure;
+  }
+}
+.itemFlexBase {
+  & div {
+    flex-grow: 1;
+    width: auto;
+    margin: 0;
+  }
+  & div:nth-child(2) {
+    flex-basis: 30px;
+    background-color: azure;
+  }
+}
+.alignSelf {
+  align-items: center;
+  & div:nth-child(2) {
+    align-self: flex-end;
+  }
+}
